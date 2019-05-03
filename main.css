@@ -1,0 +1,45 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#main {
+    border: 2px solid #bebebe;
+    width: 25%;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+#tclink {
+    text-align: center;
+    background-color: grey;
+    padding: 7px;
+    border: 2px solid #555;
+}
+
+#tcid {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+}
+
+#submit {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 25px;
+    padding: 7px;
+}
+
+#link {
+    text-decoration: none;
+    color: black;
+}
+
+#header {
+    text-align: center;
+    color: red;
+}
