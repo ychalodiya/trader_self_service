@@ -1,0 +1,24 @@
+{
+  "name": "trader_self_service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "inded.htm",
+  "homepage": "http://ychalodiya.github.io/trader_self_service",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ychalodiya/trader_self_service.git"
+  },
+  "author": "Yogeshbhai Chalodiya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ychalodiya/trader_self_service/issues"
+  },
+  "homepage": "https://github.com/ychalodiya/trader_self_service#readme",
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}
