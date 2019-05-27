@@ -1,18 +1,17 @@
 function getUrl() {
-    // get the input ID
     let tcid = document.getElementById('tcid').value.trim();
-    let arrayOfTCID = tcid.split(" ").map(index => {
-    let trimmed_ID = index.replace(/^[\,$.@%*&!`~#^-_+=<>?;:'"(){}[]]+|[\,$.@%*&!`~#^-_+=<>?;:'"(){}[]]+$/gm, "");
-    let ans = /^[a-z|A-Z|0-9]+tc{1}$/gmi.test(trimmed_ID);
+
+    tcid.split(" ").map(index => {
+        let trimmed_ID = index.replace(/^[\,$.@%*&!`~#^-_+=<>?;:'"(){}]+|[\,$.@%*&!`~#^-_+=<>?;:'"(){}]+$/gm, "");
+        let ans = /^[a-z|A-Z|0-9]+tc{1}$/gmi.test(trimmed_ID);
         // let ans = /^[a-z|A-Z]+[^tc]\s?tc{1}$/gm.test(trimmed_ID);
         // create a link if it finds right tcid
 
-// example: ,,cmpautomotiveltdtc , countryhillshyundaitc , countryhillsnissantc ,
-
+        // example: ,,cmpautomotiveltdtc , countryhillshyundaitc , countryhillsnissantc ,
         if (ans) {
             // let composerUrl = `http://${trimmed_ID}.composer.dealersmartsolutions.ca/website/as/${trimmed_ID}/${trimmed_ID}-admin/composer/index?lang=en_CA#website`;
 
-           let welcomeURL = `https://apps.dealersmartsolutions.ca/welcome/as/${trimmed_ID}/${trimmed_ID}-admin/dashboard/index?lang=en_CA`;
+             let welcomeURL = `https://apps.dealersmartsolutions.ca/welcome/as/${trimmed_ID}/${trimmed_ID}-admin/dashboard/index?lang=en_CA`;
 
             let tclink = document.getElementById('tclink');
             tclink.style.display = 'block';
@@ -20,24 +19,26 @@ function getUrl() {
             let linkaddress = document.createTextNode(trimmed_ID);
             a.appendChild(linkaddress);
             // a.href = composerUrl;
-
             a.href = welcomeURL;
             a.setAttribute('target', '_blank');
+            a.setAttribute('onClick', 'myID(this); ');
+            
+            let value = Math.floor(Math.random() * 1000);
+            console.log(`${trimmed_ID}${value}`)
             a.className = 'link';
 
             tclink.insertBefore(a, tclink.firstChild);
         }
     });
-
-    // it will bring you to the welcome page
-    let welcomeURL = `https://apps.dealersmartsolutions.ca/welcome/as/${tcid}/${tcid}-admin/dashboard/index?lang=en_CA`;
-
     // getMedia(tcid);
     document.getElementById('tcid').value = '';
 }
 
-function getMedia(mediaID) {
+function myID(e) {
+    
+}
 
+function getMedia(mediaID) {
     let tcmediaUrl = `http://apps.dealersmartsolutions.ca/promotions/as/${mediaID}/${mediaID}-admin/?lang=en_CA`;
 
     let medialink = document.getElementById('medialink');
